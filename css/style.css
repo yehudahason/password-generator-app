@@ -30,6 +30,11 @@
   --red-500: #f64a4a; /* rgb(246, 74, 74) | hsl(0, 91%, 63%) */
   --gradient-1: linear-gradient(90deg, #14131b 0%, #08070b 100%);
 
+  --text-preset-1: 700 32px/42px "JetBrains Mono", monospace;
+  --text-preset-2: 700 24px/32px "JetBrains Mono", monospace;
+  --text-preset-3: 700 18px/24px "JetBrains Mono", monospace;
+  --text-preset-4: 700 16px/20px "JetBrains Mono", monospace;
+
   font-size: 16px;
 }
 
