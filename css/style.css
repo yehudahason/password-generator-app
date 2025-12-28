@@ -70,9 +70,9 @@ body {
 /* TITLE */
 .title {
   text-align: center;
-  font-size: 0.9rem;
-  color: #8c8ca1;
-  letter-spacing: 1px;
+  font: var(--text-preset-2);
+  color: var(--grey-600);
+  margin-bottom: 16px;
 }
 
 /* PASSWORD BOX */
@@ -99,6 +99,10 @@ body {
   cursor: pointer;
 }
 
+.copy-btn img {
+  width: 21px;
+  height: 24px;
+}
 /* LENGTH */
 .length {
   display: flex;
@@ -206,7 +210,6 @@ input[type="checkbox"]:checked::after {
 
 /* BUTTON */
 .generate-btn {
-  margin-top: 6px;
   background: var(--green-200);
   color: var(--grey-800);
   border: none;
@@ -219,21 +222,48 @@ input[type="checkbox"]:checked::after {
   background: #7bff95;
 }
 
-@media (max-width: 800px) {
-  .card {
-  }
-
-  .password-box {
-  }
-}
+/* MEDIA QUERIES */
 
 @media (max-width: 600px) {
+  .title {
+    font: var(--text-preset-4);
+  }
+  .password {
+    font: var(--text-preset-2);
+  }
+  .password-box {
+    padding: 16px 18px;
+    width: 343px;
+  }
+  .copy-btn img {
+    width: 18px;
+    height: 20px;
+  }
   .card {
+    padding: 16px;
     width: 343px;
     height: 423px;
+    gap: 32px;
   }
-
-  .password-box {
-    width: 343px;
+  .length {
+    gap: 8px;
+  }
+  .length-header {
+    font: var(--text-preset-4);
+  }
+  .length-value {
+    font: var(--text-preset-2);
+  }
+  .options label {
+    font: var(--text-preset-4);
+    gap: 16px;
+  }
+  .strength {
+    font: var(--text-preset-4);
+    padding: 18px 16px;
+  }
+  .generate-btn {
+    font: var(--text-preset-4);
+    padding: 18px;
   }
 }
