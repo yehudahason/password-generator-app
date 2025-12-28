@@ -141,6 +141,11 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
+input[type="range"]::-webkit-slider-thumb:hover {
+  border: 1px solid var(--green-200);
+  background-color: black;
+  cursor: pointer;
+}
 input[type="checkbox"] {
   appearance: none;
   width: 20px;
@@ -182,10 +187,6 @@ input[type="checkbox"]:checked::after {
   color: var(--grey-200);
 }
 
-/* .options input {
-  accent-color: #7bff95;
-} */
-
 /* STRENGTH */
 .strength {
   background: #11111a;
@@ -193,6 +194,7 @@ input[type="checkbox"]:checked::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   font: var(--text-preset-3);
   color: var(--grey-600);
 }
@@ -200,11 +202,16 @@ input[type="checkbox"]:checked::after {
 .bars {
   display: flex;
   gap: 6px;
+  align-items: center;
 }
-
-.bars span {
-  width: 8px;
-  height: 20px;
+.bars .state {
+  padding: 2px;
+  font: var(--text-preset-3);
+  color: white;
+}
+.bars .bar {
+  width: 12px;
+  height: 31px;
   border: 1px solid #e5e5e5;
 }
 
@@ -219,7 +226,9 @@ input[type="checkbox"]:checked::after {
 }
 
 .generate-btn:hover {
-  background: #7bff95;
+  background: var(--green-800);
+  color: var(--green-200);
+  border: 1px solid var(--green-200);
 }
 
 /* MEDIA QUERIES */
@@ -233,7 +242,7 @@ input[type="checkbox"]:checked::after {
   }
   .password-box {
     padding: 16px 18px;
-    width: 343px;
+    width: min(343px, 90%);
   }
   .copy-btn img {
     width: 18px;
@@ -241,8 +250,8 @@ input[type="checkbox"]:checked::after {
   }
   .card {
     padding: 16px;
-    width: 343px;
-    height: 423px;
+    width: min(343px, 90%);
+    height: auto;
     gap: 32px;
   }
   .length {
