@@ -134,9 +134,16 @@ body {
 input[type="range"] {
   width: 100%;
   appearance: none;
+  -moz-appearance: none;
   height: 4px;
   background: #11111a;
   outline: none;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 4px;
+  background: #11111a;
+  border: none;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -148,7 +155,22 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
+input[type="range"]::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  /* border: none; */
+}
+
 input[type="range"]::-webkit-slider-thumb:hover {
+  border: 2px solid var(--green-200);
+  background-color: black;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
   border: 2px solid var(--green-200);
   background-color: black;
   cursor: pointer;
