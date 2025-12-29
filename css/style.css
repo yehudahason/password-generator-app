@@ -81,6 +81,7 @@ body {
   padding: 19px 32px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
   width: 540px;
 }
@@ -89,6 +90,9 @@ body {
   font: var(--text-preset-1);
   color: var(--grey-700);
   letter-spacing: 1px;
+  overflow-wrap: break-word;
+  flex: 1;
+  min-width: 0;
 }
 
 .copy-btn {
@@ -97,6 +101,11 @@ body {
   color: var(--green-200);
   font-size: 1.1rem;
   cursor: pointer;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .copy-btn img {
@@ -213,6 +222,31 @@ input[type="checkbox"]:checked::after {
   width: 12px;
   height: 31px;
   border: 1px solid #e5e5e5;
+}
+
+.bars.state0 .bar1 {
+  background: var(--red-500);
+  border: none;
+}
+
+.bars.state1 .bar1,
+.bars.state1 .bar2 {
+  background: var(--orange-400);
+  border: none;
+}
+
+.bars.state2 .bar1,
+.bars.state2 .bar2,
+.bars.state2 .bar3 {
+  background: var(--yellow-300);
+  border: none;
+}
+.bars.state3 .bar1,
+.bars.state3 .bar2,
+.bars.state3 .bar3,
+.bars.state3 .bar4 {
+  background: var(--green-200);
+  border: none;
 }
 
 /* BUTTON */
