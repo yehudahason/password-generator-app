@@ -182,7 +182,6 @@ input[type="checkbox"]:checked::after {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  /* font-size: 0.75rem; */
 }
 
 .options label {
@@ -208,17 +207,18 @@ input[type="checkbox"]:checked::after {
 
 .bars {
   display: flex;
-  gap: 6px;
+  gap: 10px;
   align-items: center;
 }
 .bars .state {
   padding: 2px;
-  font: var(--text-preset-3);
+  font-size: 24px;
+  font-weight: 500;
   color: white;
 }
 .bars .bar {
   width: 12px;
-  height: 31px;
+  height: 29px;
   border: 1px solid #e5e5e5;
 }
 
