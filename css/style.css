@@ -241,7 +241,7 @@ input[type="checkbox"]:checked::after {
 .bars .bar {
   width: 12px;
   height: 29px;
-  border: 1px solid white;
+  border: 2px solid white;
 }
 
 .bars.state0 .bar1 {
