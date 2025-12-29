@@ -42,13 +42,14 @@ function calculateStrength() {
     Number(options.lowercase.checked) +
     Number(options.numbers.checked) +
     Number(options.symbols.checked);
+  console.log(optionsCount);
   if (optionsCount === 0) {
     return -1; // No options selected
-  } else if (optionsCount === 0 || lengthRange.value < 6) {
-    return 0; // TOO WEAK
   } else if (optionsCount === 1 || lengthRange.value < 8) {
-    return 1; // WEAK
+    return 0; // TOO WEAK
   } else if (optionsCount === 2 || lengthRange.value < 12) {
+    return 1; // WEEK
+  } else if (optionsCount === 3 || lengthRange.value < 16) {
     return 2; // MEDIUM
   } else {
     return 3; // STRONG
@@ -61,7 +62,6 @@ function updateStrengthState(strength) {
 function updateStrengthBars(strength) {
   const bars = document.querySelector(".bars");
   bars.className = `bars state${strength}`;
-  console.log(bars);
 }
 // read options anytime you need them
 function getOptions() {
