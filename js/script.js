@@ -13,23 +13,25 @@ const options = {
 
 const states = ["TOO WEAK!", "WEAK", "MEDIUM", "STRONG"];
 
-// update number when slider moves
-lengthRange.addEventListener("input", () => {
-  lengthValue.textContent = lengthRange.value;
-});
-
 // Initialize length value on page load
 lengthValue.textContent = lengthRange.value;
 
+// add event listeners to options to update strength on change
+Object.values(options).forEach((value) => {
+  value.addEventListener("input", setStrength);
+});
+
+// update number when slider moves
+lengthRange.addEventListener("input", () => {
+  lengthValue.textContent = lengthRange.value;
+  setStrength();
+});
+
 generateBtn.addEventListener("click", () => {
-  const options = getOptions();
-  const strength = calculateStrength();
+  const strength = setStrength();
   if (strength === -1) {
-    stateEl.textContent = "";
-    alert("Please select at least one option");
+    return;
   } else {
-    updateStrengthState(strength);
-    updateStrengthBars(strength);
     const password = generatePassword();
     setPasswordDisplay(password);
   }
@@ -120,5 +122,17 @@ function setCopiedDisplay(set) {
     copiedEl.innerHTML = "COPIED";
   } else {
     copiedEl.innerHTML = "";
+  }
+}
+
+function setStrength() {
+  const strength = calculateStrength();
+  if (strength === -1) {
+    alert("Please select at least one option");
+    return -1;
+  } else {
+    updateStrengthState(strength);
+    updateStrengthBars(strength);
+    return strength;
   }
 }
