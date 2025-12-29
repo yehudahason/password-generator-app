@@ -39,7 +39,6 @@
 }
 
 body {
-  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; */
   background: var(--gradient-1);
   min-height: 100vh;
   color: #e5e5e5;
@@ -63,7 +62,6 @@ body {
   padding: 24px 32px;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   gap: 32px;
 }
 
@@ -143,15 +141,15 @@ input[type="range"] {
 
 input[type="range"]::-webkit-slider-thumb {
   appearance: none;
-  width: 14px;
-  height: 14px;
+  width: 28px;
+  height: 28px;
   background: #ffffff;
   border-radius: 50%;
   cursor: pointer;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-  border: 1px solid var(--green-200);
+  border: 2px solid var(--green-200);
   background-color: black;
   cursor: pointer;
 }

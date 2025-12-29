@@ -57,14 +57,7 @@ function calculateStrength() {
     return 3; // STRONG
   }
 }
-// update strength state
-function updateStrengthState(strength) {
-  stateEl.textContent = states[strength];
-}
-function updateStrengthBars(strength) {
-  const bars = document.querySelector(".bars");
-  bars.className = `bars state${strength}`;
-}
+
 // read options anytime you need them
 function getOptions() {
   return {
@@ -124,7 +117,7 @@ function setCopiedDisplay(set) {
     copiedEl.innerHTML = "";
   }
 }
-
+// set strength display
 function setStrength() {
   const strength = calculateStrength();
   if (strength === -1) {
@@ -135,4 +128,12 @@ function setStrength() {
     updateStrengthBars(strength);
     return strength;
   }
+}
+// update strength functions
+function updateStrengthState(strength) {
+  stateEl.textContent = states[strength];
+}
+function updateStrengthBars(strength) {
+  const bars = document.querySelector(".bars");
+  bars.className = `bars state${strength}`;
 }
