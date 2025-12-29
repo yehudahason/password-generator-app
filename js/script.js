@@ -112,6 +112,7 @@ function copyToClipboard(text) {
 function setPasswordDisplay(password) {
   const passwordDisplay = document.querySelector(".password");
   passwordDisplay.textContent = password;
+  passwordDisplay.style.color = "white";
 }
 
 function setCopiedDisplay(set) {
